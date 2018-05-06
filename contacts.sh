@@ -8,7 +8,7 @@
 #	First, we define a variable that will store the name of the file into
 #	which all this information will be written.
 #
-fname="names.dat"
+fname=names.dat
 
 #
 #	Now, the main program starts. It will prompt the user for six items of
@@ -27,7 +27,7 @@ echo -n "Zip: "; read zip
 #	Now, we append this information to the text file names.dat separating
 #	the six items of data with ":"
 #
-echo "$firstname:$surname:$address:$city:$state:$zip" >> $fname
+echo $firstname:$surname:$address:$city:$state:$zip >> $fname
 
 #
 #	Before exiting, the contents and the count of the number of records in
