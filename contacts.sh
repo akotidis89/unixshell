@@ -63,7 +63,11 @@ while true; do
 			(echo "The database contains `cat $fname | wc -l` record(s)."
 			echo Here are the contents of the file $fname.
 			echo
-			cat $fname) | less
+			cat $fname | sort -k2 | awk 'BEGIN { FS = ":"
+			printf("Firstname  Surname   Address           City            State         Zip    \n") 
+			printf("----------------------------------------------------------------------------\n") };
+			{ printf("%-11s%-10s%-18s%-16s%-14s%-8s\n",\
+			$1, $2, $3, $4, $5, $6) }' ) | less 
 			continue
 			;;
 		3)
